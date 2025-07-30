@@ -1,0 +1,232 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_d6a310dc88e5416980e5ad4c884f43b8
+  created: 1753864269501
+  modified: 1753864269501
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/auth/users/
+    name: Register A New User
+    meta:
+      id: req_e7e5d0f6670c4a7c807c174894df0569
+      created: 1753864269578
+      modified: 1753864418119
+      isPrivate: false
+      description: ""
+      sortKey: -1753864269578
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "user@mail.com",
+          "username": "user",
+          "password": "12345ASDFG321",
+        	"re_password" : "12345ASDFG321"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/jwt/create/
+    name: Obtain JWT tokens (login)
+    meta:
+      id: req_7b7a0a33dcad49038857f763502c6752
+      created: 1753864438753
+      modified: 1753864505625
+      isPrivate: false
+      description: ""
+      sortKey: -1753864438753
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "user@mail.com",
+          "password": "12345ASDFG321"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/jwt/refresh/
+    name: "Refresh access token\t"
+    meta:
+      id: req_e119162a9b8a42098e39addcaf67a008
+      created: 1753864519820
+      modified: 1753864560838
+      isPrivate: false
+      description: ""
+      sortKey: -1753864519820
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1Mzk1MDkwOCwiaWF0IjoxNzUzODY0NTA4LCJqdGkiOiIwY2Y3YzVhMTExNjE0ZTg4OTU5MTUzY2VjOWFiNmQxYiIsInVzZXJfaWQiOiIzIn0.fj7iB5QJqOPBX0_TlBrXHvSJES5xiQ4yJd3cvU2oAao"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/etapi/expenses/
+    name: "List user's expenses\t"
+    meta:
+      id: req_4f401a4271624275bb554cbda7c392fe
+      created: 1753864577674
+      modified: 1753864910730
+      isPrivate: false
+      description: ""
+      sortKey: -1753864577674
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+        id: pair_dd50fbeb27c643b1a6571fc5f629253c
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzODY1MTg4LCJpYXQiOjE3NTM4NjQ4ODgsImp0aSI6ImZmMmUwOTQzZTY0ZTQwMTFhM2RiNWJiYjU0MmM4ZTA2IiwidXNlcl9pZCI6IjMifQ.CCMxxNuiR7L2Xm9p7nj7sKfaGw58JBGRSw603HVhBbw
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/etapi/expenses/
+    name: "Create a new expense\t"
+    meta:
+      id: req_0be951a3a35444c681beeae99a4bcb4d
+      created: 1753864732266
+      modified: 1753864830835
+      isPrivate: false
+      description: ""
+      sortKey: -1753864732266
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "amount": 89.50,
+          "description": "Pharmacy purchase (vitamins + painkiller)",
+          "category": "H"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzODY0ODY1LCJpYXQiOjE3NTM4NjQ1NjUsImp0aSI6ImE0MDRhZDk1NjU4NjQzM2U4NTE3ZGI1NjBhMTlhZTU2IiwidXNlcl9pZCI6IjMifQ.HbUQ7x4ddcW30F9Wn9YtfNxhv7wwvxIwZMjgXYiqDQY
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/etapi/expenses/3/
+    name: Update an expense
+    meta:
+      id: req_0467e56dc1b8463fa4c37406a35e97bc
+      created: 1753864846031
+      modified: 1753864902197
+      isPrivate: false
+      description: ""
+      sortKey: -1753864732366
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "amount": 120
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzODY1MTg4LCJpYXQiOjE3NTM4NjQ4ODgsImp0aSI6ImZmMmUwOTQzZTY0ZTQwMTFhM2RiNWJiYjU0MmM4ZTA2IiwidXNlcl9pZCI6IjMifQ.CCMxxNuiR7L2Xm9p7nj7sKfaGw58JBGRSw603HVhBbw
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/etapi/expenses/3/
+    name: Delete an expense
+    meta:
+      id: req_62d4b9e9f39546d4ab3452ce199c558d
+      created: 1753864929535
+      modified: 1753864937431
+      isPrivate: false
+      description: ""
+      sortKey: -1753864732466
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzODY1MTg4LCJpYXQiOjE3NTM4NjQ4ODgsImp0aSI6ImZmMmUwOTQzZTY0ZTQwMTFhM2RiNWJiYjU0MmM4ZTA2IiwidXNlcl9pZCI6IjMifQ.CCMxxNuiR7L2Xm9p7nj7sKfaGw58JBGRSw603HVhBbw
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_76b02add3bd00c05eeec34f647c5c272815ed31b
+    created: 1753864269508
+    modified: 1753864269508
+environments:
+  name: Base Environment
+  meta:
+    id: env_76b02add3bd00c05eeec34f647c5c272815ed31b
+    created: 1753864269505
+    modified: 1753864269505
+    isPrivate: false
