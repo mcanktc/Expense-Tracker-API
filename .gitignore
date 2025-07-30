@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+.env
+.env.*
+
+# Virtual Environments
+env/
+venv/
+ENV/
+.venv/
+
+# MySQL Workbench (eğer .sql dosyalarıyla oynuyorsan)
+*.sql
+*.dump
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# PyCharm
+.idea/
+
+# Pip
+pip-log.txt
+
+# Coverage / Testing
+htmlcov/
+.coverage
+.cache
+.pytest_cache/
+
+# mypy / type checkers
+.mypy_cache/
+.dmypy.json
+.pytype/
+
+# Others
+*.bak
+*.swp
+*.swo
